@@ -1,30 +1,150 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+	<!-- <nav>
+		<router-link to="/">Home</router-link> |
+		<router-link to="/about">About</router-link>
+	</nav> -->
+	<router-view />
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	font-family: 'Ubuntu', sans-serif;
+	/*
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
+	text-align: center;
+	/* color: #2c3e50; */
 }
 
 nav {
-  padding: 30px;
+	padding: 30px;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+	font-weight: bold;
+	color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+	color: #42b983;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+.container {
+	border-radius: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.header {
+	text-align: center;
+	padding-top: 113px;
+	font-size: 26px;
+	color: #000000;
+}
+
+.row::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+[class*='col-'] {
+	width: 100%;
+	float: left;
+}
+
+@media only screen and (min-width: 700px) {
+	.selection-list {
+		margin-top: 70px;
+	}
+	.col-s-1 {
+		width: 8.33%;
+	}
+	.col-s-2 {
+		width: 16.66%;
+	}
+	.col-s-3 {
+		width: 25%;
+	}
+	.col-s-4 {
+		width: 33.33%;
+	}
+	.col-s-5 {
+		width: 41.66%;
+	}
+	.col-s-6 {
+		width: 47%;
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+	}
+	.col-s-7 {
+		width: 58.33%;
+	}
+	.col-s-8 {
+		width: 66.66%;
+	}
+	.col-s-9 {
+		width: 75%;
+	}
+	.col-s-10 {
+		width: 83.33%;
+	}
+	.col-s-11 {
+		width: 91.66%;
+	}
+	.col-s-12 {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.col-1 {
+		width: 8.33%;
+	}
+	.col-2 {
+		width: 16.66%;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-4 {
+		width: 30.33%;
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+	}
+	.col-5 {
+		width: 41.66%;
+	}
+	.col-6 {
+		width: 47%;
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+	}
+	.col-7 {
+		width: 58.33%;
+	}
+	.col-8 {
+		width: 66.66%;
+	}
+	.col-9 {
+		width: 75%;
+	}
+	.col-10 {
+		width: 83.33%;
+	}
+	.col-11 {
+		width: 91.66%;
+	}
+	.col-12 {
+		width: 100%;
+	}
 }
 </style>
