@@ -8,6 +8,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 #app {
 	font-family: 'Ubuntu', sans-serif;
 	/*
@@ -39,6 +40,7 @@ body {
 	min-height: 100vh;
 }
 .container {
+	height: 1186px;
 	border-radius: 20px;
 	padding-left: 15px;
 	padding-right: 15px;

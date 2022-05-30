@@ -8,20 +8,35 @@
 					src="@/assets/icons/accommodations.svg"
 				/>
 				<b>Accommodation</b>
-				<div v-if="accommodationsData.length">
-					<Cards
-						:data="accommodationsData"
-						:updateData="updateData"
-						selection="accommodation"
-					/>
-				</div>
 			</span>
 		</div>
+		<div v-if="accommodationsData.length">
+			<Cards
+				:data="accommodationsData"
+				:updateData="updateData"
+				selection="accommodation"
+			/>
+		</div>
+		<router-link
+			:to="selectedAccommodation ? '/transport' : ''"
+			:class="{ disabled: !selectedAccommodation }"
+		>
+			<div
+				class="footer col-12 col-s-12"
+				:class="
+					selectedAccommodation
+						? 'footer-accomm-color'
+						: 'footer-accomm-color-dark'
+				"
+			>
+				<p class="font-link">Hello</p>
+			</div>
+		</router-link>
 	</div>
 </template>
 
 <script>
-import { ref, watchEffect } from 'vue';
+import { ref, watch, watchEffect } from 'vue';
 import accommodations from '../assets/data/accommodations';
 import Cards from '../components/Cards.vue';
 
@@ -29,17 +44,28 @@ export default {
 	components: { Cards },
 	setup() {
 		const accommodationsData = ref(accommodations);
+		const selectedAccommodation = ref(null);
 		const edit = ref(false);
 
 		const updateData = (data) => {
 			accommodationsData.value = data;
-			console.log(accommodationsData.value);
 		};
+
+		watch(accommodationsData.value, () => {
+			const selected = accommodationsData.value.some(
+				(item) => item.selected === true
+			);
+			selectedAccommodation.value = selected;
+		});
 
 		watchEffect(() => {
 			const prevSelected = JSON.parse(localStorage.getItem('accommodation'));
 			const change = localStorage.getItem('edit');
 			const completed = localStorage.getItem('completed');
+			const selected = accommodationsData.value.some(
+				(item) => item.selected === true
+			);
+			selectedAccommodation.value = selected;
 			if (completed === 'completed') {
 				navigate('/summary');
 			}
@@ -57,10 +83,8 @@ export default {
 			} else {
 				accommodationsData.value.forEach((item) => (item.selected = false));
 			}
-			// setData(accommodations);
 		});
-		// accommodationsData.value = accommodations;
-		return { accommodationsData, updateData };
+		return { accommodationsData, updateData, selectedAccommodation };
 	},
 };
 </script>
@@ -86,48 +110,6 @@ export default {
 	margin-right: 12px;
 }
 
-.backgroundScenic {
-	background-image: url('../assets/images/accommodation-scenic.jpeg');
-}
-
-.backgroundScenicDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-scenic.jpeg');
-}
-
-.backgroundQuaint {
-	background-image: url('../assets/images/accommodation-quaint.jpeg');
-}
-
-.backgroundQuaintDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-quaint.jpeg');
-}
-
-.backgroundCheap {
-	background-image: url('../assets/images/accommodation-cheap.jpeg');
-}
-
-.backgroundCheapDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-cheap.jpeg');
-}
-
-.card {
-	position: relative;
-	cursor: pointer;
-	margin-bottom: 35px;
-	font-size: 16px;
-	color: #1f2c41;
-}
-
-.infoButton {
-	height: 75px;
-	margin-top: 170px;
-	font-size: 16px;
-	background: #ffffff;
-}
-
 .footer-accomm-color {
 	background: #5181fc;
 }
@@ -139,5 +121,11 @@ export default {
 
 .disabled-link {
 	cursor: not-allowed;
+}
+
+.disabled {
+	/* opacity: 0.5; */
+	cursor: not-allowed;
+	/* pointer-events: none; */
 }
 </style>
