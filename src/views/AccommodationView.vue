@@ -1,7 +1,7 @@
 <template>
 	<div class="container accommodation">
 		<div class="header">
-			<span class="font-link">
+			<span class="font-nunito">
 				<img
 					class="svgIcon"
 					alt="building"
@@ -29,7 +29,10 @@
 						: 'footer-accomm-color-dark'
 				"
 			>
-				<p class="font-link">Hello</p>
+				<p class="font-link">
+					{{ edit ? 'Edit accommodation' : 'Select accommodation' }}
+					<span class="button-next">{{ !edit ? '1 / 3' : '' }}</span>
+				</p>
 			</div>
 		</router-link>
 	</div>
@@ -84,7 +87,7 @@ export default {
 				accommodationsData.value.forEach((item) => (item.selected = false));
 			}
 		});
-		return { accommodationsData, updateData, selectedAccommodation };
+		return { accommodationsData, updateData, selectedAccommodation, edit };
 	},
 };
 </script>
@@ -119,13 +122,12 @@ export default {
 		#5181fc;
 }
 
-.disabled-link {
+.disabled {
 	cursor: not-allowed;
 }
 
-.disabled {
-	/* opacity: 0.5; */
-	cursor: not-allowed;
-	/* pointer-events: none; */
+.button-next {
+	float: inherit;
+	padding-left: 40px;
 }
 </style>

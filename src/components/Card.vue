@@ -50,7 +50,6 @@ export default {
 	setup(props) {
 		const itemObject = ref({});
 		const { item, index, changeObject, selection } = props;
-		console.log('selection : ', selection);
 		itemObject.value = item;
 		return { itemObject, index, changeObject, selection };
 	},

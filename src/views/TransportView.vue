@@ -1,7 +1,7 @@
 <template>
 	<div class="container transport">
 		<div class="header">
-			<span class="font-link">
+			<span class="font-nunito">
 				<img
 					class="svgTransport"
 					alt="planes buses and cars"
@@ -29,7 +29,10 @@
 						: 'footer-transport-color-dark'
 				"
 			>
-				<p class="font-link">Hello</p>
+				<p class="font-link">
+					{{ edit ? 'Edit transport' : 'Select transport' }}
+					<span class="button-next">{{ !edit ? '2 / 3' : '' }}</span>
+				</p>
 			</div>
 		</router-link>
 	</div>
@@ -84,7 +87,7 @@ export default {
 				transportData.value.forEach((item) => (item.selected = false));
 			}
 		});
-		return { transportData, updateData, selectedTransport };
+		return { transportData, updateData, selectedTransport, edit };
 	},
 };
 </script>
