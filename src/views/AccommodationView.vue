@@ -96,6 +96,9 @@ export default {
 };
 </script>
 
+<style lang="scss" scoped>
+@import '../styles/global.scss';
+</style>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
@@ -116,15 +119,6 @@ export default {
 	position: relative;
 	height: 22px;
 	margin-right: 12px;
-}
-
-.footer-accomm-color {
-	background: #5181fc;
-}
-
-.footer-accomm-color-dark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		#5181fc;
 }
 
 .disabled {

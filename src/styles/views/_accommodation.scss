@@ -1,0 +1,9 @@
+$accommColor: #5181fc;
+.footer-accomm-color {
+	background: $accommColor;
+}
+
+.footer-accomm-color-dark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$accommColor;
+}
