@@ -18,7 +18,7 @@
 			/>
 		</div>
 		<router-link
-			:to="selectedAccommodation ? '/transport' : ''"
+			:to="edit ? '/summary' : selectedAccommodation ? '/transport' : ''"
 			:class="{ disabled: !selectedAccommodation }"
 		>
 			<div
@@ -31,7 +31,9 @@
 			>
 				<p class="font-link">
 					{{ edit ? 'Edit accommodation' : 'Select accommodation' }}
-					<span class="button-next">{{ !edit ? '1 / 3' : '' }}</span>
+					<span :class="!edit ? 'button-next' : ''">{{
+						!edit ? '1 / 3' : ''
+					}}</span>
 				</p>
 			</div>
 		</router-link>
@@ -40,6 +42,7 @@
 
 <script>
 import { ref, watch, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 import accommodations from '../assets/data/accommodations';
 import Cards from '../components/Cards.vue';
 
@@ -49,6 +52,7 @@ export default {
 		const accommodationsData = ref(accommodations);
 		const selectedAccommodation = ref(null);
 		const edit = ref(false);
+		const router = useRouter();
 
 		const updateData = (data) => {
 			accommodationsData.value = data;
@@ -70,7 +74,7 @@ export default {
 			);
 			selectedAccommodation.value = selected;
 			if (completed === 'completed') {
-				navigate('/summary');
+				router.push({ name: 'Summary' });
 			}
 			if (change === 'edit') {
 				edit.value = true;
@@ -98,6 +102,7 @@ export default {
 .accommodation {
 	background: #ecf0f9;
 }
+
 .font-nunito {
 	font-family: 'Nunito', sans-serif;
 	font-weight: 700;

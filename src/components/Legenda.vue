@@ -27,4 +27,43 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#legenda {
+	margin-top: 30px;
+	margin-left: 20px;
+	background-color: white;
+	padding: 5px;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+}
+
+.box-color {
+	height: 15px;
+	width: 15px;
+}
+
+#color-accommodation {
+	background-color: #5181fc;
+}
+
+#color-transport {
+	background-color: #d73780;
+}
+
+#color-food {
+	background-color: #61ab04;
+}
+
+.info-text {
+	margin-left: 11px;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 160%;
+	color: #000000;
+}
+</style>

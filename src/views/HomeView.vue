@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container-home">
 		<div class="header">
 			<span class="font-link"> Lorem<b>Ipsum</b> </span>
 		</div>
@@ -28,15 +28,40 @@
 </template>
 
 <script>
+import { watchEffect } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
+
 export default {
 	name: 'HomeView',
 	components: {},
+	setup() {
+		const completed = localStorage.getItem('completed');
+		const edit = localStorage.getItem('edit');
+		const router = useRouter();
+		watchEffect(() => {
+			if (completed === 'completed' || edit === 'edit') {
+				router.push({ name: 'Summary' });
+			} else {
+				localStorage.removeItem('accommodation');
+				localStorage.removeItem('transport');
+				localStorage.removeItem('food');
+			}
+		});
+	},
 };
 </script>
 
 <style>
+.container-home {
+	height: 785px;
+	border-radius: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 .font-link {
 	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	size: 16px;
 }
 
 b {

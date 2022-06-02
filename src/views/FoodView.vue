@@ -19,7 +19,9 @@
 			>
 				<p class="font-link">
 					{{ edit ? 'Edit food' : 'Select food' }}
-					<span class="button-next">{{ !edit ? '3 / 3' : '' }}</span>
+					<span :class="!edit ? 'button-next' : ''">{{
+						!edit ? '3 / 3' : ''
+					}}</span>
 				</p>
 			</div>
 		</router-link>
@@ -28,6 +30,7 @@
 
 <script>
 import { ref, watch, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 import food from '../assets/data/foods';
 import Cards from '../components/Cards.vue';
 
@@ -37,6 +40,7 @@ export default {
 		const foodData = ref(food);
 		const selectedFood = ref(null);
 		const edit = ref(false);
+		const router = useRouter();
 
 		const updateData = (data) => {
 			foodData.value = data;
@@ -53,9 +57,9 @@ export default {
 			const completed = localStorage.getItem('completed');
 			const selected = foodData.value.some((item) => item.selected === true);
 			selectedFood.value = selected;
-			// if (completed === 'completed') {
-			// 	navigate('/summary');
-			// }
+			if (completed === 'completed') {
+				router.push({ name: 'Summary' });
+			}
 			if (change === 'edit') {
 				edit.value = true;
 			} else {

@@ -18,7 +18,7 @@
 			/>
 		</div>
 		<router-link
-			:to="selectedTransport ? '/food' : ''"
+			:to="edit ? '/summary' : selectedTransport ? '/food' : ''"
 			:class="{ disabled: !selectedTransport }"
 		>
 			<div
@@ -31,7 +31,9 @@
 			>
 				<p class="font-link">
 					{{ edit ? 'Edit transport' : 'Select transport' }}
-					<span class="button-next">{{ !edit ? '2 / 3' : '' }}</span>
+					<span :class="!edit ? 'button-next' : ''">{{
+						!edit ? '2 / 3' : ''
+					}}</span>
 				</p>
 			</div>
 		</router-link>
@@ -40,6 +42,7 @@
 
 <script>
 import { ref, watch, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 import transport from '../assets/data/transports';
 import Cards from '../components/Cards.vue';
 
@@ -49,6 +52,7 @@ export default {
 		const transportData = ref(transport);
 		const selectedTransport = ref(null);
 		const edit = ref(false);
+		const router = useRouter();
 
 		const updateData = (data) => {
 			transportData.value = data;
@@ -70,7 +74,7 @@ export default {
 			);
 			selectedTransport.value = selected;
 			if (completed === 'completed') {
-				navigate('/summary');
+				router.push({ name: 'Summary' });
 			}
 			if (change === 'edit') {
 				edit.value = true;
