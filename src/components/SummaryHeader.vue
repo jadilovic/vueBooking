@@ -23,34 +23,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.summary-head {
-	font-weight: 'bold';
-	display: 'inline';
-}
-
-.cost-description {
-	font-weight: bold;
-	display: inline;
-	font-size: 16px;
-}
-
-.header-summary {
-	text-align: center;
-	padding-top: 100px;
-	font-size: 38px;
-	color: #000000;
-}
-
-.header-label {
-	position: absolute;
-	margin-top: 13px;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	color: #000000;
-	background: #ffffff;
-	border-radius: 10px;
-	max-width: max-content;
-}
+<style lang="scss" scoped>
+@import '../styles/global.scss';
 </style>

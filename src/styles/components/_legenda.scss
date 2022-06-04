@@ -1,0 +1,38 @@
+#legenda {
+	margin-top: 30px;
+	margin-left: 20px;
+	background-color: white;
+	padding: 5px;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+}
+
+.box-color {
+	height: $boxColorHeight;
+	width: $boxColorHeight;
+}
+
+#color-accommodation {
+	background-color: $accommColor;
+}
+
+#color-transport {
+	background-color: $transportColor;
+}
+
+#color-food {
+	background-color: $foodColor;
+}
+
+.info-text {
+	margin-left: 11px;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 160%;
+	color: #000000;
+}

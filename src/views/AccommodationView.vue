@@ -26,7 +26,7 @@
 				:class="
 					selectedAccommodation
 						? 'footer-accomm-color'
-						: 'footer-accomm-color-dark'
+						: 'footer-accomm-color-dark not-allowed'
 				"
 			>
 				<p class="font-link">
@@ -96,37 +96,33 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../styles/global.scss';
-</style>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-.accommodation {
-	background: #ecf0f9;
+.backgroundScenic {
+	background-image: url('../assets/images/accommodation-scenic.jpeg');
 }
 
-.font-nunito {
-	font-family: 'Nunito', sans-serif;
-	font-weight: 700;
-	font-weight: bold;
-	padding: 10px;
-	padding-top: 23px;
+.backgroundScenicDark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url('../assets/images/accommodation-scenic.jpeg');
 }
 
-.svgIcon {
-	/* border: 1px solid red; */
-	position: relative;
-	height: 22px;
-	margin-right: 12px;
+.backgroundQuaint {
+	background-image: url('../assets/images/accommodation-quaint.jpeg');
 }
 
-.disabled {
-	cursor: not-allowed;
+.backgroundQuaintDark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url('../assets/images/accommodation-quaint.jpeg');
 }
 
-.button-next {
-	float: inherit;
-	padding-left: 40px;
+.backgroundCheap {
+	background-image: url('../assets/images/accommodation-cheap.jpeg');
+}
+
+.backgroundCheapDark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url('../assets/images/accommodation-cheap.jpeg');
 }
 </style>

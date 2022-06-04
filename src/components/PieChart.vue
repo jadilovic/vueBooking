@@ -19,10 +19,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.pie-chart {
-	width: 103px;
-	height: 103px;
-	border-radius: 50%;
-}
+<style lang="scss" scoped>
+@import '../styles/global.scss';
 </style>

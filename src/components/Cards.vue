@@ -47,10 +47,6 @@ export default {
 };
 </script>
 
-<style>
-.row {
-	margin-top: 70px;
-	content: '';
-	clear: both;
-}
+<style lang="scss">
+@import '../styles/global.scss';
 </style>

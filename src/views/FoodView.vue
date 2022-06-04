@@ -15,7 +15,11 @@
 		>
 			<div
 				class="footer col-12 col-s-12"
-				:class="selectedFood ? 'footer-food-color' : 'footer-food-color-dark'"
+				:class="
+					selectedFood
+						? 'footer-food-color'
+						: 'footer-food-color-dark not-allowed'
+				"
 			>
 				<p class="font-link">
 					{{ edit ? 'Edit food' : 'Select food' }}
@@ -80,25 +84,8 @@ export default {
 };
 </script>
 
-<style>
-.food {
-	background: #e1ecd3;
-}
-
-.svgFood {
-	margin-right: 10px;
-	position: relative;
-	width: 27px;
-}
-
-.footer-food-color {
-	background: #61ab04;
-}
-
-.footer-food-color-dark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		#61ab04;
-}
+<style lang="scss">
+@import '../styles/global.scss';
 
 .backgroundGourmet {
 	background-image: url('../assets/images/food-gourmet.jpeg');
@@ -125,14 +112,5 @@ export default {
 .backgroundFastFoodDark {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
 		url('../assets/images/food-cheap.jpeg');
-}
-
-.footer-food-color {
-	background: #61ab04;
-}
-
-.footer-food-color-dark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		#61ab04;
 }
 </style>

@@ -1,0 +1,66 @@
+.card {
+	position: relative;
+	cursor: pointer;
+	margin-bottom: 35px;
+	font-size: $cardFontSize;
+	color: #1f2c41;
+	border-radius: $componentRadius;
+}
+
+.infoButton {
+	height: 75px;
+	margin-top: 170px;
+	font-size: $cardFontSize;
+	background: #ffffff;
+	border-radius: $componentRadius;
+}
+
+.circle {
+	position: absolute;
+	width: 57px;
+	height: 57px;
+	top: 35%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+	border-radius: 100px;
+}
+.check {
+	position: absolute;
+	left: 20.83%;
+	right: 20.83%;
+	top: 20.17%;
+	bottom: 29.17%;
+	color: #ffffff;
+}
+
+.info-left {
+	float: left;
+}
+
+.info-right {
+	float: right;
+}
+
+.accommColor {
+	color: $accommColor;
+}
+
+.transportColor {
+	color: $transportColor;
+}
+
+.foodColor {
+	color: $foodColor;
+}
+
+.accommCircle {
+	background: $accommColor;
+}
+
+.transportCircle {
+	background: $transportColor;
+}
+
+.foodCircle {
+	background: $foodColor;
+}

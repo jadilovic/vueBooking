@@ -1,0 +1,18 @@
+.transport {
+	background: #f9ecf2;
+}
+
+.svgTransport {
+	margin-right: 10px;
+	position: relative;
+	width: 27px;
+}
+
+.footer-transport-color {
+	background: $transportColor;
+}
+
+.footer-transport-color-dark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$transportColor;
+}

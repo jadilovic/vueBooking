@@ -26,7 +26,7 @@
 				:class="
 					selectedTransport
 						? 'footer-transport-color'
-						: 'footer-transport-color-dark'
+						: 'footer-transport-color-dark not-allowed'
 				"
 			>
 				<p class="font-link">
@@ -96,25 +96,8 @@ export default {
 };
 </script>
 
-<style>
-.transport {
-	background: #f9ecf2;
-}
-
-.svgTransport {
-	margin-right: 10px;
-	position: relative;
-	width: 27px;
-}
-
-.footer-transport-color {
-	background: #d73780;
-}
-
-.footer-transport-color-dark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		#d73780;
-}
+<style lang="scss">
+@import '../styles/global.scss';
 
 .backgroundLuxury {
 	background-image: url('../assets/images/transport-luxury.jpeg');

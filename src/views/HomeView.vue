@@ -51,50 +51,6 @@ export default {
 };
 </script>
 
-<style>
-.container-home {
-	height: 785px;
-	border-radius: 20px;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-.font-link {
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: 400;
-	size: 16px;
-}
-
-b {
-	font-weight: 700;
-}
-
-.description {
-	text-align: left;
-	margin-top: 70px;
-	margin-left: 35px;
-	margin-right: 35px;
-	font-size: 16px;
-	line-height: 160%;
-	font-feature-settings: 'pnum' on, 'lnum' on;
-	color: #1f2c41;
-}
-
-.footer a {
-	color: #ffffff;
-}
-
-.footer {
-	position: sticky;
-	margin-top: 60px;
-	bottom: 0px;
-	height: 72px;
-	padding: 9px;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
-	background: #111111;
-	border-radius: 20px 20px 0px 0px;
-	text-align: center;
-	color: white;
-}
+<style lang="scss">
+@import '../styles/global.scss';
 </style>

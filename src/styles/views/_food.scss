@@ -1,0 +1,18 @@
+.food {
+	background: #e1ecd3;
+}
+
+.svgFood {
+	margin-right: 10px;
+	position: relative;
+	width: 27px;
+}
+
+.footer-food-color {
+	background: $foodColor;
+}
+
+.footer-food-color-dark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$foodColor;
+}

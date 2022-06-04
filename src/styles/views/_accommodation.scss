@@ -1,4 +1,5 @@
-$accommColor: #5181fc;
+@import '../setup/variables';
+
 .footer-accomm-color {
 	background: $accommColor;
 }
@@ -6,4 +7,28 @@ $accommColor: #5181fc;
 .footer-accomm-color-dark {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		$accommColor;
+}
+
+.accommodation {
+	background: $accommBackground;
+}
+
+.font-nunito {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+	font-weight: bold;
+	padding: 10px;
+	padding-top: 23px;
+}
+
+.svgIcon {
+	/* border: 1px solid red; */
+	position: relative;
+	height: 22px;
+	margin-right: 12px;
+}
+
+.button-next {
+	float: inherit;
+	padding-left: 40px;
 }

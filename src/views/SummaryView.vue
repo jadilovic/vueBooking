@@ -3,12 +3,12 @@
 		<SummaryHeader :totalCost="totalCost" />
 		<div class="card-pie-chart col-6 col-s-6">
 			<div id="pie-chart-container">
-				<PieChart id="pie-chart" :pieData="pieChart" />
+				<PieChart :pieData="pieChart" />
 				<Legenda :pieData="pieChart" />
 			</div>
 		</div>
 		<SummaryCard :summaryData="summary" />
-		<div @click="startNewQuiz" class="footer col-12 col-s-12">
+		<div @click="startNewQuiz" class="footer footer-summary col-12 col-s-12">
 			<p class="font-link">Clear Selection / Start Over</p>
 		</div>
 	</div>
@@ -97,36 +97,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.summary-body {
-	background: #fed6d6;
-	position: relative;
-	height: 128.5vh;
-}
-
-.card-pie-chart {
-	height: 160px;
-	border-radius: 20px;
-	margin-top: 70px;
-	margin-bottom: 37px;
-	color: #000000;
-	background-color: #ffffff;
-}
-
-#pie-chart-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#pie-chart {
-	margin-top: 30px;
-	border-radius: 50%;
-	width: 103px;
-	height: 103px;
-}
-
-.footer {
-	cursor: pointer;
-}
+<style lang="scss" scoped>
+@import '../styles/global.scss';
 </style>
