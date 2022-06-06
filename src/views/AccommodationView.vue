@@ -1,5 +1,5 @@
 <template>
-	<div class="container accommodation">
+	<div class="container accommodation row">
 		<div class="header">
 			<span class="font-nunito">
 				<img
@@ -17,6 +17,7 @@
 				selection="accommodation"
 			/>
 		</div>
+
 		<router-link
 			:to="edit ? '/summary' : selectedAccommodation ? '/transport' : ''"
 			:class="{ disabled: !selectedAccommodation }"

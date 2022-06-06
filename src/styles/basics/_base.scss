@@ -1,12 +1,11 @@
 @import '../setup/variables';
+* {
+	box-sizing: border-box;
+}
 
 #app {
 	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 body {
@@ -15,7 +14,8 @@ body {
 }
 
 .container {
-	height: 174.9vh;
+	// help needed
+	// height: auto;
 	border-radius: $componentRadius;
 	padding-left: $containerPadding;
 	padding-right: $containerPadding;
@@ -29,7 +29,6 @@ body {
 }
 
 .row {
-	margin-top: 70px;
 	content: '';
 	clear: both;
 }

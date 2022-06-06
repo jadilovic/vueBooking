@@ -1,5 +1,5 @@
 <template>
-	<div class="container summary-body">
+	<div class="container summary-body row">
 		<SummaryHeader :totalCost="totalCost" />
 		<div class="card-pie-chart col-6 col-s-6">
 			<div id="pie-chart-container">

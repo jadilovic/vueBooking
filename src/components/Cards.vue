@@ -1,5 +1,5 @@
 <template>
-	<div class="row">
+	<div class="cards">
 		<div v-for="(item, index) in data" :key="item.name">
 			<Card
 				:item="item"
@@ -19,6 +19,7 @@ export default {
 	setup(props) {
 		const { data, updateData, selection } = props;
 		let prevIndex = -1;
+
 		const getIndexIfPrevSelected = () => {
 			data.forEach((item, i) => {
 				if (item.selected === true) {
@@ -27,6 +28,7 @@ export default {
 			});
 		};
 		getIndexIfPrevSelected();
+
 		const changeObject = (objectIndex) => {
 			const index = objectIndex;
 			if (index === prevIndex) {

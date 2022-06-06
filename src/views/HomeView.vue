@@ -1,5 +1,5 @@
 <template>
-	<div class="container-home">
+	<div class="container-home row">
 		<div class="header">
 			<span class="font-link"> Lorem<b>Ipsum</b> </span>
 		</div>

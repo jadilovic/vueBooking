@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import './basics/base';
+@import './setup//variables';
 @import './setup/breakpoints';
+@import './basics/base';
 @import './views/home';
 @import './views/accommodation';
 @import './views/transport';

@@ -1,10 +1,11 @@
 @import '../setup/variables';
 
 .container-home {
-	height: 785px;
+	height: 100vh;
 	border-radius: $componentRadius;
 	padding-left: $containerPadding;
 	padding-right: $containerPadding;
+	border-style: solid;
 }
 .font-link {
 	font-family: 'Ubuntu', sans-serif;
@@ -34,8 +35,8 @@ b {
 .footer {
 	position: sticky;
 	margin-top: 60px;
-	bottom: 0px;
 	height: 72px;
+	bottom: 0px;
 	padding: 9px;
 	font-size: 16px;
 	font-style: normal;

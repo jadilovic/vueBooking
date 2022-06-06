@@ -1,5 +1,5 @@
 <template>
-	<div class="container food">
+	<div class="container food row">
 		<div class="header">
 			<span class="font-nunito">
 				<img class="svgFood" alt="meals" src="@/assets/icons/food.svg" />

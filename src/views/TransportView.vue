@@ -1,5 +1,5 @@
 <template>
-	<div class="container transport">
+	<div class="container transport row">
 		<div class="header">
 			<span class="font-nunito">
 				<img
