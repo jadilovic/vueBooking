@@ -1,14 +1,12 @@
 <template>
-	<div class="cards">
-		<div v-for="(item, index) in data" :key="item.name">
-			<Card
-				:item="item"
-				:index="index"
-				:changeObject="changeObject"
-				:selection="selection"
-			/>
-		</div>
-	</div>
+	<Card
+		v-for="(item, index) in data"
+		:key="item.name"
+		:item="item"
+		:index="index"
+		:changeObject="changeObject"
+		:selection="selection"
+	/>
 </template>
 
 <script>
@@ -19,7 +17,6 @@ export default {
 	setup(props) {
 		const { data, updateData, selection } = props;
 		let prevIndex = -1;
-
 		const getIndexIfPrevSelected = () => {
 			data.forEach((item, i) => {
 				if (item.selected === true) {

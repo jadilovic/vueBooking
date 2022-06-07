@@ -17,11 +17,12 @@
 <script>
 import { ref, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 import PieChart from '../components/PieChart.vue';
 import Legenda from '../components/Legenda.vue';
 import SummaryCard from '../components/SummaryCard.vue';
 import SummaryHeader from '../components/SummaryHeader.vue';
-import accommSvg from '../assets/icons/accommodations.svg';
+import accommSvg from '../assets/icons/accommodation.svg';
 import transportSvg from '../assets/icons/transport.svg';
 import foodSvg from '../assets/icons/food.svg';
 export default {
@@ -39,6 +40,11 @@ export default {
 		const summary = ref([]);
 		const totalCost = ref(0);
 		const pieChart = ref([]);
+		const store = useStore();
+
+		const toggleEdit = () => {
+			store.commit('TOGGLE_EDIT', true);
+		};
 
 		const createPieChart = () => {
 			const total = summary.value.reduce((acc, cur) => {
@@ -69,6 +75,7 @@ export default {
 			});
 			const food = JSON.parse(localStorage.getItem('food'));
 			summary.value.push({ ...food, logo: logos[2], service: services[2] });
+
 			if (!accommodation?.name || !transport?.name || !food?.name) {
 				localStorage.removeItem('completed');
 				router.push({ name: 'Home' });
@@ -79,14 +86,14 @@ export default {
 		};
 
 		watchEffect(() => {
-			localStorage.removeItem('edit');
 			createSummary();
 		});
 
-		return { summary, totalCost, pieChart };
+		return { summary, totalCost, pieChart, toggleEdit };
 	},
 	methods: {
 		startNewQuiz() {
+			this.toggleEdit();
 			localStorage.removeItem('completed');
 			localStorage.removeItem('accommodation');
 			localStorage.removeItem('transport');

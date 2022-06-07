@@ -1,9 +1,9 @@
 <template>
 	<div
+		class="card"
 		@click="changeObject(index)"
 		:id="index"
 		:key="itemObject.name"
-		class="card col-4 col-s-6"
 		:class="itemObject.selected ? itemObject.photo + 'Dark' : itemObject.photo"
 	>
 		<div

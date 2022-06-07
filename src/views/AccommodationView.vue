@@ -5,11 +5,12 @@
 				<img
 					class="svgIcon"
 					alt="building"
-					src="@/assets/icons/accommodations.svg"
+					src="@/assets/icons/accommodation.svg"
 				/>
 				<b>Accommodation</b>
 			</span>
 		</div>
+
 		<div v-if="accommodationsData.length">
 			<Cards
 				:data="accommodationsData"
@@ -92,7 +93,14 @@ export default {
 				accommodationsData.value.forEach((item) => (item.selected = false));
 			}
 		});
-		return { accommodationsData, updateData, selectedAccommodation, edit };
+		return {
+			accommodationsData,
+			updateData,
+			selectedAccommodation,
+			edit,
+			isEdit,
+			toggleEdit,
+		};
 	},
 };
 </script>

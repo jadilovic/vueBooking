@@ -6,6 +6,7 @@
 #app {
 	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
+	min-height: 100vh;
 }
 
 body {
@@ -14,8 +15,7 @@ body {
 }
 
 .container {
-	// help needed
-	// height: auto;
+	min-height: 100vh;
 	border-radius: $componentRadius;
 	padding-left: $containerPadding;
 	padding-right: $containerPadding;
@@ -24,6 +24,7 @@ body {
 .header {
 	text-align: center;
 	padding-top: 113px;
+	padding-bottom: 70px;
 	font-size: 26px;
 	color: #000000;
 }
@@ -46,4 +47,8 @@ body {
 
 .not-allowed {
 	cursor: not-allowed;
+}
+
+.allowed {
+	cursor: pointer;
 }

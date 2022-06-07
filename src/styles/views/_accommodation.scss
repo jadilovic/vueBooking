@@ -1,10 +1,10 @@
 @import '../setup/variables';
 
-.footer-accomm-color {
+.footer-accommodation-color {
 	background: $accommColor;
 }
 
-.footer-accomm-color-dark {
+.footer-accommodation-color-dark {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		$accommColor;
 }

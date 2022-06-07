@@ -19,7 +19,8 @@
 				</p>
 			</span>
 		</div>
-		<router-link to="/accommodation">
+		<router-link to="/quiz">
+			<!-- <router-link to="/accommodation"> -->
 			<div class="footer col-12 col-s-12">
 				<p class="font-link">Start Quiz</p>
 			</div>
@@ -28,8 +29,9 @@
 </template>
 
 <script>
-import { watchEffect } from '@vue/runtime-core';
+import { ref, watchEffect } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
+import services from '../assets/data/services';
 
 export default {
 	name: 'HomeView',
@@ -38,7 +40,14 @@ export default {
 		const completed = localStorage.getItem('completed');
 		const edit = localStorage.getItem('edit');
 		const router = useRouter();
+		const clearPreviousSelections = () => {
+			services.forEach((element) => {
+				return (element.selected = false);
+			});
+		};
+
 		watchEffect(() => {
+			clearPreviousSelections();
 			if (completed === 'completed' || edit === 'edit') {
 				router.push({ name: 'Summary' });
 			} else {
