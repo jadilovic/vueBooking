@@ -4,7 +4,7 @@
 		@click="changeObject(index)"
 		:id="index"
 		:key="itemObject.name"
-		:class="{ selected: itemObject.selected }"
+		:class="{ 'card--selected': itemObject.selected }"
 	>
 		<div class="card__aspect-ratio">
 			<img :src="itemObject.photo" />
@@ -37,8 +37,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
-
 .card {
 	flex: 1;
 	position: relative;
@@ -54,7 +52,7 @@ export default {
 		border-radius: $componentRadius;
 		overflow: hidden;
 
-		.selected & {
+		.card--selected & {
 			&:after {
 				content: '';
 				z-index: 1;
@@ -76,39 +74,40 @@ export default {
 			width: 100%;
 			height: 100%;
 		}
+	}
 
-		&__circle {
-			position: absolute;
-			z-index: 2;
-			width: 57px;
-			height: 57px;
-			top: calc(50% - 37.5px);
-			left: 50%;
-			-ms-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-			border-radius: 100px;
+	&__circle {
+		position: absolute;
+		z-index: 2;
+		width: 57px;
+		height: 57px;
+		top: calc(50% - 37.5px);
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		border-radius: 100px;
 
-			.accommodation & {
-				background: $accommColor;
-			}
-			.transport & {
-				background: $transportColor;
-			}
-			.food & {
-				background: $foodColor;
-			}
+		.accommodation & {
+			background: $accommColor;
 		}
-		&__check {
-			position: absolute;
-			left: 20.83%;
-			right: 20.83%;
-			top: 20.17%;
-			bottom: 29.17%;
-			color: #ffffff;
+		.transport & {
+			background: $transportColor;
+		}
+		.food & {
+			background: $foodColor;
 		}
 	}
 
-	&__infoButton {
+	&__check {
+		position: absolute;
+		left: 20.83%;
+		right: 20.83%;
+		top: 20.17%;
+		bottom: 29.17%;
+		color: #ffffff;
+	}
+
+	&__info-button {
 		width: 100%;
 		position: absolute;
 		height: 75px;
@@ -118,7 +117,7 @@ export default {
 		background: white;
 		border-radius: $componentRadius;
 
-		.selected & {
+		.card--selected & {
 			.accommodation & {
 				color: $accommColor;
 			}
@@ -129,14 +128,14 @@ export default {
 				color: $foodColor;
 			}
 		}
+	}
 
-		&__info-left {
-			float: left;
-		}
+	&__info-left {
+		float: left;
+	}
 
-		&__info-right {
-			float: right;
-		}
+	&__info-right {
+		float: right;
 	}
 }
 </style>

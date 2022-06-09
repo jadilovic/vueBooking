@@ -1,9 +1,9 @@
 <template>
-	<div class="container-home row">
-		<div class="header">
+	<div class="quiz row">
+		<header>
 			<span class="font-link"> Lorem<b>Ipsum</b> </span>
-		</div>
-		<div class="description">
+		</header>
+		<div class="quiz__description">
 			<span class="font-link">
 				Lorem Ipsum is simply dummy text of the printing and typesetting
 				industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -20,10 +20,9 @@
 			</span>
 		</div>
 		<router-link to="/quiz">
-			<!-- <router-link to="/accommodation"> -->
-			<div class="footer col-12 col-s-12">
+			<footer>
 				<p class="font-link">Start Quiz</p>
-			</div>
+			</footer>
 		</router-link>
 	</div>
 </template>
@@ -61,5 +60,42 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
+.quiz {
+	min-height: 100vh;
+	border-radius: $componentRadius;
+	padding-left: $containerPadding;
+	padding-right: $containerPadding;
+
+	&__description {
+		text-align: left;
+		margin-top: 30px;
+		padding-bottom: 70px;
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 16px;
+		line-height: 160%;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		color: #1f2c41;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 5px;
+		padding-bottom: 82px;
+
+		@include md {
+			grid-template-columns: repeat(3, 1fr);
+			padding-bottom: 82px;
+			padding: 0;
+		}
+	}
+
+	&__svgIcon {
+		/* border: 1px solid red; */
+		position: relative;
+		height: 22px;
+		margin-right: 12px;
+	}
+}
 </style>

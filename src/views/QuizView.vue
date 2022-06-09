@@ -1,43 +1,41 @@
 <template>
-	<div
-		v-if="currentGroupIndex < 3"
-		:class="'container ' + groups[currentGroupIndex].toLowerCase() + ' row'"
-	>
-		<div class="header">
-			<span class="font-nunito">
-				<img
-					class="svgIcon"
-					:alt="groups[currentGroupIndex].toLowerCase() + ' svg icon'"
-					:src="
-						require('@/assets/icons/' +
-							groups[currentGroupIndex].toLowerCase() +
-							'.svg')
-					"
+	<div v-if="isInitial">
+		<h1>Home</h1>
+		<div @click="toggleInitial">Change Initial</div>
+		<div>Is initial? : {{ isInitial }}</div>
+	</div>
+	<div v-else>
+		<div v-if="currentGroupIndex < 3" :class="`quiz ${group} row`">
+			<header>
+				<span class="font-nunito">
+					<img
+						class="quiz__svgIcon"
+						:alt="`${group} svg icon`"
+						:src="require(`@/assets/icons/${group}.svg`)"
+					/>
+					<b>{{ groupName }}</b>
+				</span>
+			</header>
+			<div v-if="currentServicesData.length" class="quiz__cards">
+				<Cards
+					:key="currentGroupIndex"
+					:data="currentServicesData"
+					:updateData="updateData"
+					:selection="group"
 				/>
-				<b>{{ groups[currentGroupIndex] }}</b>
-			</span>
-		</div>
-		<div @click="toggleEdit">Change Edit</div>
-		<div>{{ isEdit }}</div>
-		<div v-if="currentServicesData.length" class="quiz">
-			<Cards
-				:key="currentGroupIndex"
-				:data="currentServicesData"
-				:updateData="updateData"
-				:selection="group"
-			/>
-		</div>
-		<div
-			@click="nextGroup"
-			class="footer not-allowed col-12 col-s-12"
-			:class="[group && `footer-${group}-color`, isSelectedService]"
-		>
-			<p class="font-link">
-				{{ isEdit ? 'Edit ' + group : 'Select ' + group }}
-				<span :class="!isEdit ? 'button-next' : ''">{{
-					!isEdit ? currentGroupIndex + 1 + ' / 3' : ''
-				}}</span>
-			</p>
+			</div>
+			<footer
+				@click="nextGroup"
+				class="not-allowed"
+				:class="[`footer-${group}-color`, isSelectedService]"
+			>
+				<p class="font-link">
+					{{ isEdit ? `Edit ${group}` : `Select ${group}` }}
+					<span :class="!isEdit ? 'button-next' : ''">{{
+						!isEdit ? `${currentGroupIndex + 1} / ${groups.length}` : ''
+					}}</span>
+				</p>
+			</footer>
 		</div>
 	</div>
 </template>
@@ -61,11 +59,16 @@ export default {
 		const currentServicesData = ref([]);
 		const selectedService = ref(null);
 		const router = useRouter();
+
 		const group = computed(() =>
 			currentServicesData.value[0]?.group.toLowerCase()
 		);
 
-		console.log(group.value);
+		const groupName = computed(
+			() =>
+				currentServicesData.value[0]?.group.charAt(0).toUpperCase() +
+				currentServicesData.value[0]?.group.slice(1)
+		);
 
 		const isSelectedService = computed(() =>
 			selectedService.value
@@ -73,8 +76,12 @@ export default {
 				: `footer-${group.value}-color-dark`
 		);
 
-		const toggleEdit = () => {
-			store.commit('TOGGLE_EDIT', isEdit.value);
+		// const toggleEdit = () => {
+		// 	store.commit('TOGGLE_EDIT', isEdit.value);
+		// };
+
+		const toggleInitial = () => {
+			store.commit('TOGGLE_INITIAL', isInitial.value);
 		};
 
 		const filterGroups = () => {
@@ -148,10 +155,10 @@ export default {
 				router.push({ name: 'Summary' });
 			}
 			if (isEdit.value) {
+				console.log('test testing hi');
 				currentGroupIndex.value = groupIndex;
 				setCurrentData();
 				setCurrentSelectedFromLocalStorage();
-				localStorage.removeItem('changeIndex');
 			} else {
 				setCurrentData();
 			}
@@ -161,6 +168,7 @@ export default {
 		return {
 			groups,
 			group,
+			groupName,
 			allServicesData,
 			updateData,
 			selectedService,
@@ -169,7 +177,8 @@ export default {
 			nextGroup,
 			isEdit,
 			isSelectedService,
-			toggleEdit,
+			toggleInitial,
+			isInitial,
 		};
 	},
 	methods: {},
@@ -177,5 +186,78 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
+.row {
+	content: '';
+	clear: both;
+}
+
+.row::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+[class*='col-'] {
+	width: 100%;
+	float: left;
+}
+
+.not-allowed {
+	cursor: not-allowed;
+}
+
+.allowed {
+	cursor: pointer;
+}
+
+.accommodation {
+	background: $accommBackground;
+}
+
+.footer-accommodation-color {
+	background: $accommColor;
+}
+
+.footer-accommodation-color-dark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$accommColor;
+}
+
+.food {
+	background: #e1ecd3;
+}
+
+.svgFood {
+	margin-right: 10px;
+	position: relative;
+	width: 27px;
+}
+
+.footer-food-color {
+	background: $foodColor;
+}
+
+.footer-food-color-dark {
+	background: linear-gradient(0, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$foodColor;
+}
+
+.transport {
+	background: #f9ecf2;
+}
+
+.svgTransport {
+	margin-right: 10px;
+	position: relative;
+	width: 27px;
+}
+
+.footer-transport-color {
+	background: $transportColor;
+}
+
+.footer-transport-color-dark {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		$transportColor;
+}
 </style>

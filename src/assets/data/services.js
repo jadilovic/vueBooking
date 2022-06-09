@@ -28,7 +28,7 @@ const services = [
 		color: '#61ab04',
 		name: 'Luxury',
 		cost: 600,
-		photo: 'backgroundLuxury',
+		photo: require('@/assets/images/transport-luxury.jpeg'),
 		selected: false,
 	},
 	{
@@ -36,7 +36,7 @@ const services = [
 		color: '#61ab04',
 		name: 'Public',
 		cost: 450,
-		photo: 'backgroundPublic',
+		photo: require('@/assets/images/transport-public.jpeg'),
 		selected: false,
 	},
 	{
@@ -44,7 +44,7 @@ const services = [
 		color: '#61ab04',
 		name: 'Cheap',
 		cost: 250,
-		photo: 'backgroundTransportCheap',
+		photo: require('@/assets/images/transport-cheap.jpeg'),
 		selected: false,
 	},
 	{
@@ -52,7 +52,7 @@ const services = [
 		color: '#d73780',
 		name: 'Gourmet ',
 		cost: 500,
-		photo: 'backgroundGourmet',
+		photo: require('@/assets/images/food-gourmet.jpeg'),
 		selected: false,
 	},
 	{
@@ -60,7 +60,7 @@ const services = [
 		color: '#d73780',
 		name: 'Traditional',
 		cost: 400,
-		photo: 'backgroundTraditional',
+		photo: require('@/assets/images/food-traditional.jpeg'),
 		selected: false,
 	},
 	{
@@ -68,7 +68,7 @@ const services = [
 		color: '#d73780',
 		name: 'Fast food',
 		cost: 300,
-		photo: 'backgroundFastFood',
+		photo: require('@/assets/images/food-cheap.jpeg'),
 		selected: false,
 	},
 ];

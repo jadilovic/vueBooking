@@ -1,5 +1,5 @@
 <template>
-	<div class="container summary-body row">
+	<div class="quiz summary-body row">
 		<SummaryHeader :totalCost="totalCost" />
 		<div class="card-pie-chart col-6 col-s-6">
 			<div id="pie-chart-container">
@@ -8,9 +8,9 @@
 			</div>
 		</div>
 		<SummaryCard :summaryData="summary" />
-		<div @click="startNewQuiz" class="footer footer-summary col-12 col-s-12">
+		<footer @click="startNewQuiz" class="footer-summary">
 			<p class="font-link">Clear Selection / Start Over</p>
-		</div>
+		</footer>
 	</div>
 </template>
 
@@ -87,6 +87,7 @@ export default {
 
 		watchEffect(() => {
 			createSummary();
+			localStorage.removeItem('changeIndex');
 		});
 
 		return { summary, totalCost, pieChart, toggleEdit };
@@ -105,5 +106,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/global.scss';
+.summary-body {
+	background: #fed6d6;
+	position: relative;
+	height: max-content;
+}
+
+.card-pie-chart {
+	height: 160px;
+	border-radius: $componentRadius;
+	margin-top: 70px;
+	margin-bottom: 37px;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+#pie-chart-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pie-chart {
+	width: 103px;
+	height: 103px;
+	margin-top: 28.5px;
+	border-radius: 50%;
+}
+
+.footer-summary {
+	cursor: pointer;
+}
 </style>

@@ -1,50 +1,34 @@
-@import '../setup/variables';
+// @import '../setup/variables';
 
-.container-home {
-	min-height: 100vh;
-	border-radius: $componentRadius;
-	padding-left: $containerPadding;
-	padding-right: $containerPadding;
-	border-style: solid;
-}
-.font-link {
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: 400;
-	size: 16px;
-}
+// .container-home {
+// 	min-height: 100vh;
+// 	border-radius: $componentRadius;
+// 	padding-left: $containerPadding;
+// 	padding-right: $containerPadding;
+// 	border-style: solid;
+// }
+// .font-link {
+// 	font-family: 'Ubuntu', sans-serif;
+// 	font-weight: 400;
+// 	size: 16px;
+// }
 
-b {
-	font-weight: 700;
-}
+// b {
+// 	font-weight: 700;
+// }
 
-.description {
-	text-align: left;
-	margin-top: 30px;
-	padding-bottom: 70px;
-	margin-left: 35px;
-	margin-right: 35px;
-	font-size: 16px;
-	line-height: 160%;
-	font-feature-settings: 'pnum' on, 'lnum' on;
-	color: #1f2c41;
-}
+// .description {
+// 	text-align: left;
+// 	margin-top: 30px;
+// 	padding-bottom: 70px;
+// 	margin-left: 35px;
+// 	margin-right: 35px;
+// 	font-size: 16px;
+// 	line-height: 160%;
+// 	font-feature-settings: 'pnum' on, 'lnum' on;
+// 	color: #1f2c41;
+// }
 
-.footer a {
-	color: #ffffff;
-}
-
-.footer {
-	position: fixed;
-	margin-top: 60px;
-	height: 72px;
-	bottom: 0px;
-	padding: 9px;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
-	background: #111111;
-	border-radius: 20px 20px 0 0;
-	text-align: center;
-	color: white;
-	width: calc(100% - 30px);
-}
+// .footer a {
+// 	color: #ffffff;
+// }

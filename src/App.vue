@@ -1,9 +1,5 @@
 <template>
-	<div class="container">
-		<router-view />
-	</div>
+	<router-view />
 </template>
 
-<style lang="scss">
-@import './styles/global.scss';
-</style>
+<style lang="scss"></style>

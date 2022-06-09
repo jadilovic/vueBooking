@@ -1,15 +1,15 @@
-.quiz {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-gap: 5px;
-	padding-bottom: 82px;
+// .quiz {
+// 	display: grid;
+// 	grid-template-columns: repeat(1, 1fr);
+// 	grid-gap: 5px;
+// 	padding-bottom: 82px;
 
-	@include md {
-		grid-template-columns: repeat(3, 1fr);
-		padding-bottom: 82px;
-		padding: 0;
-	}
-}
+// 	@include md {
+// 		grid-template-columns: repeat(3, 1fr);
+// 		padding-bottom: 82px;
+// 		padding: 0;
+// 	}
+// }
 
 // .card {
 // 	flex: 1;

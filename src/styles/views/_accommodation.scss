@@ -1,61 +1,61 @@
-@import '../setup/variables';
+// @import '../setup/variables';
 
-.footer-accommodation-color {
-	background: $accommColor;
-}
+// .footer-accommodation-color {
+// 	background: $accommColor;
+// }
 
-.footer-accommodation-color-dark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		$accommColor;
-}
+// .footer-accommodation-color-dark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+// 		$accommColor;
+// }
 
-.accommodation {
-	background: $accommBackground;
-}
+// .accommodation {
+// 	background: $accommBackground;
+// }
 
-.font-nunito {
-	font-family: 'Nunito', sans-serif;
-	font-weight: 700;
-	font-weight: bold;
-	padding: 10px;
-	padding-top: 23px;
-}
+// .font-nunito {
+// 	font-family: 'Nunito', sans-serif;
+// 	font-weight: 700;
+// 	font-weight: bold;
+// 	padding: 10px;
+// 	padding-top: 23px;
+// }
 
-.svgIcon {
-	/* border: 1px solid red; */
-	position: relative;
-	height: 22px;
-	margin-right: 12px;
-}
+// .svgIcon {
+// 	/* border: 1px solid red; */
+// 	position: relative;
+// 	height: 22px;
+// 	margin-right: 12px;
+// }
 
-.button-next {
-	float: inherit;
-	padding-left: 40px;
-}
+// .button-next {
+// 	float: inherit;
+// 	padding-left: 40px;
+// }
 
-.backgroundScenic {
-	background-image: url('~@/assets/images/accommodation-scenic.jpeg');
-}
+// .backgroundScenic {
+// 	background-image: url('~@/assets/images/accommodation-scenic.jpeg');
+// }
 
-.backgroundScenicDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('~@/assets/images/accommodation-scenic.jpeg');
-}
+// .backgroundScenicDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('~@/assets/images/accommodation-scenic.jpeg');
+// }
 
-.backgroundQuaint {
-	background-image: url('~@/assets/images/accommodation-quaint.jpeg');
-}
+// .backgroundQuaint {
+// 	background-image: url('~@/assets/images/accommodation-quaint.jpeg');
+// }
 
-.backgroundQuaintDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('~@/assets/images/accommodation-quaint.jpeg');
-}
+// .backgroundQuaintDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('~@/assets/images/accommodation-quaint.jpeg');
+// }
 
-.backgroundCheap {
-	background-image: url('~@/assets/images/accommodation-cheap.jpeg');
-}
+// .backgroundCheap {
+// 	background-image: url('~@/assets/images/accommodation-cheap.jpeg');
+// }
 
-.backgroundCheapDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('~@/assets/images/accommodation-cheap.jpeg');
-}
+// .backgroundCheapDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('~@/assets/images/accommodation-cheap.jpeg');
+// }

@@ -12,8 +12,6 @@
 					{{ item.service }}
 					<img alt="move" v-bind:src="caret" class="icon" />
 				</summary>
-				<div @click="toggleEdit">Change Edit</div>
-				<div>{{ isEdit }}</div>
 				<div class="info-list">
 					<span class="info-cost"> ${{ item.cost }} </span>
 					<span class="change-selection" @click="handleChange(index)">
