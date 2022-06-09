@@ -24,28 +24,16 @@
 				:key="currentGroupIndex"
 				:data="currentServicesData"
 				:updateData="updateData"
-				:selection="currentServicesData[0].group.toLowerCase()"
+				:selection="group"
 			/>
 		</div>
 		<div
 			@click="nextGroup"
-			class="footer col-12 col-s-12"
-			:class="
-				selectedService
-					? 'footer-' +
-					  currentServicesData[0].group.toLowerCase() +
-					  '-color allowed'
-					: 'footer-' +
-					  currentServicesData[0].group.toLowerCase() +
-					  '-color-dark not-allowed'
-			"
+			class="footer not-allowed col-12 col-s-12"
+			:class="[group && `footer-${group}-color`, isSelectedService]"
 		>
 			<p class="font-link">
-				{{
-					isEdit
-						? 'Edit ' + currentServicesData[0].group.toLowerCase()
-						: 'Select ' + currentServicesData[0].group.toLowerCase()
-				}}
+				{{ isEdit ? 'Edit ' + group : 'Select ' + group }}
 				<span :class="!isEdit ? 'button-next' : ''">{{
 					!isEdit ? currentGroupIndex + 1 + ' / 3' : ''
 				}}</span>
@@ -55,7 +43,7 @@
 </template>
 
 <script>
-import { ref, watch, watchEffect } from 'vue';
+import { ref, watch, watchEffect, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import services from '../assets/data/services';
 import Cards from '../components/Cards.vue';
@@ -66,12 +54,24 @@ export default {
 	setup() {
 		const store = useStore();
 		const isEdit = ref(store.state.isEdit);
+		const isInitial = ref(store.state.isInitial);
 		const groups = ref([]);
 		const currentGroupIndex = ref(0);
 		const allServicesData = ref(services);
 		const currentServicesData = ref([]);
 		const selectedService = ref(null);
 		const router = useRouter();
+		const group = computed(() =>
+			currentServicesData.value[0]?.group.toLowerCase()
+		);
+
+		console.log(group.value);
+
+		const isSelectedService = computed(() =>
+			selectedService.value
+				? 'footer-color allowed'
+				: `footer-${group.value}-color-dark`
+		);
 
 		const toggleEdit = () => {
 			store.commit('TOGGLE_EDIT', isEdit.value);
@@ -105,6 +105,8 @@ export default {
 			currentServicesData.value = allServicesData.value.filter(
 				(item) => item.group === groups.value[currentGroupIndex.value]
 			);
+
+			console.log(currentServicesData.value);
 		};
 
 		const setCurrentSelectedFromLocalStorage = () => {
@@ -141,6 +143,7 @@ export default {
 			const completed = localStorage.getItem('completed');
 			const groupIndex = Number(localStorage.getItem('changeIndex'));
 			filterGroups();
+
 			if (completed === 'completed') {
 				router.push({ name: 'Summary' });
 			}
@@ -157,6 +160,7 @@ export default {
 		console.log(selectedService.value);
 		return {
 			groups,
+			group,
 			allServicesData,
 			updateData,
 			selectedService,
@@ -164,6 +168,7 @@ export default {
 			currentServicesData,
 			nextGroup,
 			isEdit,
+			isSelectedService,
 			toggleEdit,
 		};
 	},
@@ -173,31 +178,4 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
-
-.backgroundScenic {
-	background-image: url('../assets/images/accommodation-scenic.jpeg');
-}
-
-.backgroundScenicDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-scenic.jpeg');
-}
-
-.backgroundQuaint {
-	background-image: url('../assets/images/accommodation-quaint.jpeg');
-}
-
-.backgroundQuaintDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-quaint.jpeg');
-}
-
-.backgroundCheap {
-	background-image: url('../assets/images/accommodation-cheap.jpeg');
-}
-
-.backgroundCheapDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-cheap.jpeg');
-}
 </style>

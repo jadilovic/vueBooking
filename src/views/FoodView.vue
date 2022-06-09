@@ -85,32 +85,32 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
+// @import '../styles/global.scss';
 
-.backgroundGourmet {
-	background-image: url('../assets/images/food-gourmet.jpeg');
-}
+// .backgroundGourmet {
+// 	background-image: url('../assets/images/food-gourmet.jpeg');
+// }
 
-.backgroundGourmetDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/food-gourmet.jpeg');
-}
+// .backgroundGourmetDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/food-gourmet.jpeg');
+// }
 
-.backgroundTraditional {
-	background-image: url('../assets/images/food-traditional.jpeg');
-}
+// .backgroundTraditional {
+// 	background-image: url('../assets/images/food-traditional.jpeg');
+// }
 
-.backgroundTraditionalDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/food-traditional.jpeg');
-}
+// .backgroundTraditionalDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/food-traditional.jpeg');
+// }
 
-.backgroundFastFood {
-	background-image: url('../assets/images/food-cheap.jpeg');
-}
+// .backgroundFastFood {
+// 	background-image: url('../assets/images/food-cheap.jpeg');
+// }
 
-.backgroundFastFoodDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/food-cheap.jpeg');
-}
+// .backgroundFastFoodDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/food-cheap.jpeg');
+// }
 </style>

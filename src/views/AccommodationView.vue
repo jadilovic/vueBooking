@@ -106,32 +106,32 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
+// @import '../styles/global.scss';
 
-.backgroundScenic {
-	background-image: url('../assets/images/accommodation-scenic.jpeg');
-}
+// .backgroundScenic {
+// 	background-image: url('../assets/images/accommodation-scenic.jpeg');
+// }
 
-.backgroundScenicDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-scenic.jpeg');
-}
+// .backgroundScenicDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/accommodation-scenic.jpeg');
+// }
 
-.backgroundQuaint {
-	background-image: url('../assets/images/accommodation-quaint.jpeg');
-}
+// .backgroundQuaint {
+// 	background-image: url('../assets/images/accommodation-quaint.jpeg');
+// }
 
-.backgroundQuaintDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-quaint.jpeg');
-}
+// .backgroundQuaintDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/accommodation-quaint.jpeg');
+// }
 
-.backgroundCheap {
-	background-image: url('../assets/images/accommodation-cheap.jpeg');
-}
+// .backgroundCheap {
+// 	background-image: url('../assets/images/accommodation-cheap.jpeg');
+// }
 
-.backgroundCheapDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/accommodation-cheap.jpeg');
-}
+// .backgroundCheapDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/accommodation-cheap.jpeg');
+// }
 </style>

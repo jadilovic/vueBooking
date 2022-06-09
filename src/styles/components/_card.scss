@@ -11,70 +11,98 @@
 	}
 }
 
-.card {
-	flex: 1;
-	position: relative;
-	cursor: pointer;
-	margin-bottom: 32px;
-	font-size: $cardFontSize;
-	color: #1f2c41;
-	border-radius: $componentRadius;
-}
+// .card {
+// 	flex: 1;
+// 	position: relative;
+// 	cursor: pointer;
+// 	margin-bottom: 32px;
+// 	font-size: $cardFontSize;
+// 	color: #1f2c41;
+// 	border-radius: $componentRadius;
 
-.infoButton {
-	height: 75px;
-	margin-top: 170px;
-	font-size: $cardFontSize;
-	background: #ffffff;
-	border-radius: $componentRadius;
-}
+// 	.aspect-ratio {
+// 		position: relative;
+// 		height: 0;
+// 		padding-bottom: 56.25%;
+// 		overflow: hidden;
 
-.circle {
-	position: absolute;
-	width: 57px;
-	height: 57px;
-	top: 35%;
-	left: 50%;
-	margin: -25px 0 0 -25px;
-	border-radius: 100px;
-}
-.check {
-	position: absolute;
-	left: 20.83%;
-	right: 20.83%;
-	top: 20.17%;
-	bottom: 29.17%;
-	color: #ffffff;
-}
+// 		&.selected {
+// 			&:after {
+// 				content: '';
+// 				background-color: #000;
+// 				opacity: 0.5;
+// 				position: absolute;
+// 				left: 0;
+// 				top: 0;
+// 				width: 100%;
+// 				height: 100%;
+// 			}
+// 		}
 
-.info-left {
-	float: left;
-}
+// 		img {
+// 			position: absolute;
+// 			left: 0;
+// 			top: 0;
+// 			width: 100%;
+// 			height: 100%;
+// 		}
+// 	}
+// }
 
-.info-right {
-	float: right;
-}
+// .infoButton {
+// 	height: 75px;
+// 	margin-top: 170px;
+// 	font-size: $cardFontSize;
+// 	background: #ffffff;
+// 	border-radius: $componentRadius;
+// }
 
-.accommColor {
-	color: $accommColor;
-}
+// .circle {
+// 	position: absolute;
+// 	width: 57px;
+// 	height: 57px;
+// 	top: 35%;
+// 	left: 50%;
+// 	margin: -25px 0 0 -25px;
+// 	border-radius: 100px;
+// }
+// .check {
+// 	position: absolute;
+// 	left: 20.83%;
+// 	right: 20.83%;
+// 	top: 20.17%;
+// 	bottom: 29.17%;
+// 	color: #ffffff;
+// }
 
-.transportColor {
-	color: $transportColor;
-}
+// .info-left {
+// 	float: left;
+// }
 
-.foodColor {
-	color: $foodColor;
-}
+// .info-right {
+// 	float: right;
+// }
 
-.accommCircle {
-	background: $accommColor;
-}
+// .accommColor {
+// 	color: $accommColor;
+// }
 
-.transportCircle {
-	background: $transportColor;
-}
+// .transportColor {
+// 	color: $transportColor;
+// }
 
-.foodCircle {
-	background: $foodColor;
-}
+// .foodColor {
+// 	color: $foodColor;
+// }
+
+// .accommCircle {
+// 	background: $accommColor;
+// }
+
+// .transportCircle {
+// 	background: $transportColor;
+// }
+
+// .foodCircle {
+// 	background: $foodColor;
+// }

@@ -97,32 +97,32 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/global.scss';
+// @import '../styles/global.scss';
 
-.backgroundLuxury {
-	background-image: url('../assets/images/transport-luxury.jpeg');
-}
+// .backgroundLuxury {
+// 	background-image: url('../assets/images/transport-luxury.jpeg');
+// }
 
-.backgroundLuxuryDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/transport-luxury.jpeg');
-}
+// .backgroundLuxuryDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/transport-luxury.jpeg');
+// }
 
-.backgroundPublic {
-	background-image: url('../assets/images/transport-public.jpeg');
-}
+// .backgroundPublic {
+// 	background-image: url('../assets/images/transport-public.jpeg');
+// }
 
-.backgroundPublicDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/transport-public.jpeg');
-}
+// .backgroundPublicDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/transport-public.jpeg');
+// }
 
-.backgroundTransportCheap {
-	background-image: url('../assets/images/transport-cheap.jpeg');
-}
+// .backgroundTransportCheap {
+// 	background-image: url('../assets/images/transport-cheap.jpeg');
+// }
 
-.backgroundTransportCheapDark {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url('../assets/images/transport-cheap.jpeg');
-}
+// .backgroundTransportCheapDark {
+// 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+// 		url('../assets/images/transport-cheap.jpeg');
+// }
 </style>

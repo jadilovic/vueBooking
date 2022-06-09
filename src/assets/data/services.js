@@ -4,7 +4,7 @@ const services = [
 		color: '#5181fc',
 		name: 'Scenic view',
 		cost: 700,
-		photo: 'backgroundScenic',
+		photo: require('@/assets/images/accommodation-scenic.jpeg'),
 		selected: false,
 	},
 	{
@@ -12,7 +12,7 @@ const services = [
 		color: '#5181fc',
 		name: 'Quaint',
 		cost: 550,
-		photo: 'backgroundQuaint',
+		photo: require('@/assets/images/accommodation-quaint.jpeg'),
 		selected: false,
 	},
 	{
@@ -20,7 +20,7 @@ const services = [
 		color: '#5181fc',
 		name: 'Cheap',
 		cost: 350,
-		photo: 'backgroundCheap',
+		photo: require('@/assets/images/accommodation-cheap.jpeg'),
 		selected: false,
 	},
 	{
