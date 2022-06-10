@@ -49,7 +49,7 @@ export default {
 			this.toggleEdit();
 			localStorage.removeItem('completed');
 			localStorage.setItem('changeIndex', index);
-			this.$router.push({ name: 'QuizView' });
+			this.$router.push({ name: 'Quiz' });
 		},
 	},
 };

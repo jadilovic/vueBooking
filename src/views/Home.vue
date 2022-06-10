@@ -33,7 +33,7 @@ import { useRouter } from 'vue-router';
 import services from '../assets/data/services';
 
 export default {
-	name: 'HomeView',
+	name: 'Home',
 	components: {},
 	setup() {
 		const completed = localStorage.getItem('completed');

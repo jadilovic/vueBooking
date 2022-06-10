@@ -81,7 +81,9 @@ export default {
 		// };
 
 		const toggleInitial = () => {
-			store.commit('TOGGLE_INITIAL', isInitial.value);
+			console.log('toggle initial');
+			store.commit('TOGGLE_INITIAL', !isInitial.value);
+			console.log(isInitial.value);
 		};
 
 		const filterGroups = () => {
