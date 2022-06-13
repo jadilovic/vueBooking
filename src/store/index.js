@@ -4,16 +4,18 @@ const store = createStore({
 	state: {
 		title: 'Vuex Store',
 		isEdit: false,
-		isInitial: false,
+		isInitial: true,
 	},
-	getters: {},
+	getters: {
+		getIsInitial: (state) => state.isInitial,
+	},
 	mutations: {
-		TOGGLE_EDIT(state, isEdit) {
-			state.isEdit = !isEdit;
+		TOGGLE_EDIT(state) {
+			state.isEdit = !state.isEdit;
 		},
-		TOGGLE_INITIAL(state, isInitial) {
-			console.log('store : ', isInitial);
-			state.isInitial = !isInitial;
+		TOGGLE_INITIAL(state) {
+			console.log('store : ', state.isInitial);
+			state.isInitial = !state.isInitial;
 		},
 	},
 	actions: {},

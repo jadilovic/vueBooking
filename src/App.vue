@@ -1,5 +1,7 @@
 <template>
-	<router-view />
+	<AppLayout>
+		<router-view />
+	</AppLayout>
 </template>
 
 <style lang="scss"></style>

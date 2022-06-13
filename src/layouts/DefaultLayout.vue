@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>App Layout Default</h1>
+		<h1>Quiz App Default Layout</h1>
 		<slot />
 	</div>
 </template>

@@ -19,11 +19,13 @@
 				</p>
 			</span>
 		</div>
-		<router-link to="/quiz">
+		<div @click="toggleInitial">
+			<!-- <router-link to="/quiz"> -->
 			<footer>
 				<p class="font-link">Start Quiz</p>
 			</footer>
-		</router-link>
+			<!-- </router-link> -->
+		</div>
 	</div>
 </template>
 
@@ -31,6 +33,7 @@
 import { ref, watchEffect } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 import services from '../assets/data/services';
+import { useStore } from 'vuex';
 
 export default {
 	name: 'Home',
@@ -39,6 +42,13 @@ export default {
 		const completed = localStorage.getItem('completed');
 		const edit = localStorage.getItem('edit');
 		const router = useRouter();
+		const store = useStore();
+
+		const toggleInitial = () => {
+			console.log('toggle initial');
+			store.commit('TOGGLE_INITIAL');
+		};
+
 		const clearPreviousSelections = () => {
 			services.forEach((element) => {
 				return (element.selected = false);
@@ -55,6 +65,8 @@ export default {
 				localStorage.removeItem('food');
 			}
 		});
+
+		return { toggleInitial };
 	},
 };
 </script>

@@ -1,42 +1,35 @@
 <template>
-	<div v-if="isInitial">
-		<h1>Home</h1>
-		<div @click="toggleInitial">Change Initial</div>
-		<div>Is initial? : {{ isInitial }}</div>
-	</div>
-	<div v-else>
-		<div v-if="currentGroupIndex < 3" :class="`quiz ${group} row`">
-			<header>
-				<span class="font-nunito">
-					<img
-						class="quiz__svgIcon"
-						:alt="`${group} svg icon`"
-						:src="require(`@/assets/icons/${group}.svg`)"
-					/>
-					<b>{{ groupName }}</b>
-				</span>
-			</header>
-			<div v-if="currentServicesData.length" class="quiz__cards">
-				<Cards
-					:key="currentGroupIndex"
-					:data="currentServicesData"
-					:updateData="updateData"
-					:selection="group"
+	<div v-if="currentGroupIndex < 3" :class="`quiz ${group} row`">
+		<header>
+			<span class="font-nunito">
+				<img
+					class="quiz__svgIcon"
+					:alt="`${group} svg icon`"
+					:src="require(`@/assets/icons/${group}.svg`)"
 				/>
-			</div>
-			<footer
-				@click="nextGroup"
-				class="not-allowed"
-				:class="[`footer-${group}-color`, isSelectedService]"
-			>
-				<p class="font-link">
-					{{ isEdit ? `Edit ${group}` : `Select ${group}` }}
-					<span :class="!isEdit ? 'button-next' : ''">{{
-						!isEdit ? `${currentGroupIndex + 1} / ${groups.length}` : ''
-					}}</span>
-				</p>
-			</footer>
+				<b>{{ groupName }}</b>
+			</span>
+		</header>
+		<div v-if="currentServicesData.length" class="quiz__cards">
+			<Cards
+				:key="currentGroupIndex"
+				:data="currentServicesData"
+				:updateData="updateData"
+				:selection="group"
+			/>
 		</div>
+		<footer
+			@click="nextGroup"
+			class="not-allowed"
+			:class="[`footer-${group}-color`, isSelectedService]"
+		>
+			<p class="font-link">
+				{{ isEdit ? `Edit ${group}` : `Select ${group}` }}
+				<span :class="!isEdit ? 'button-next' : ''">{{
+					!isEdit ? `${currentGroupIndex + 1} / ${groups.length}` : ''
+				}}</span>
+			</p>
+		</footer>
 	</div>
 </template>
 
@@ -82,7 +75,7 @@ export default {
 
 		const toggleInitial = () => {
 			console.log('toggle initial');
-			store.commit('TOGGLE_INITIAL', !isInitial.value);
+			store.commit('TOGGLE_INITIAL', isInitial.value);
 			console.log(isInitial.value);
 		};
 
